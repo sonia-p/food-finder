@@ -1,0 +1,29 @@
+{
+  "name": "food-finder",
+  "version": "1.0.0",
+  "description": "application food finder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonia-p/food-finder.git"
+  },
+  "author": "Sonia Panisello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonia-p/food-finder/issues"
+  },
+  "homepage": "https://github.com/sonia-p/food-finder#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
