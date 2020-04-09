@@ -28,9 +28,12 @@ h1 {
     font-family: 'Raleway', sans-serif;
     color:#C1D14B;
 }
+.container-fluid {
+    height:100%;
+}
 .row{
-    height: 100%;
-
+    height:100%;
+    overflow-y: auto; 
 }
 /* la map doit occuper 100% de la hauteur de son container */
 #map {
@@ -40,12 +43,15 @@ h1 {
 .card-img{
     width: 100%;
 }
+.card {
+    height: 220px;
+}
 .list{
     padding: 10px;
     background-color: #716B74;
     width: 100%;
     height: 100%;
-    overflow: scroll;
+    overflow-y: auto; /* scrollbar de la liste */
 }
 #dropdownMenu2 {
     padding: 10px;
