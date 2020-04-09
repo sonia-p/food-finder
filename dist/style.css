@@ -5,9 +5,11 @@ yellow green : #C1D14B
 corail : #F36B5C
 dark slate Gray : #3B3C3C
 Slate Gray : #716B74 */
-body{
-    margin:0px;
-    padding: 0px;
+/* la page remplit la fenêtre de navigation */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 header{
     display: flex;
@@ -21,24 +23,34 @@ header{
 header figure img {
     height: 100px;
 }
+
 h1 {
-    font-family: 'Raleway', sans-serif;;
+    font-family: 'Raleway', sans-serif;
     color:#C1D14B;
 }
-iframe{
-    width: 100%;
-    padding: 10px;
+.row{
     height: 100%;
-    min-height: 300px;
+
+}
+/* la map doit occuper 100% de la hauteur de son container */
+#map {
+    height: 600px;
+    width: 100%;
+  }
+.card-img{
+    width: 100%;
 }
 .list{
     padding: 10px;
     background-color: #716B74;
     width: 100%;
+    height: 100%;
+    overflow: scroll;
 }
 #dropdownMenu2 {
     padding: 10px;
     margin: 10px;
+    height: 100%;
 }
 /* quelques ajustements de mise en page en fonction de la taille de l'écran */
 /* Small devices & Medium devices (landscape phones, tablets, 768px and less) */

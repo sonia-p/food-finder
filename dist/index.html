@@ -5,7 +5,6 @@
         <meta name="viewport" content="initial-scale=1.0">
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway|Shrikhand&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -19,10 +18,10 @@
         </header>
         <section class="container-fluid">
             <div class="row">
-            <div id="map" class="col-sm-12 col-md-12 col-lg-8 col-xl-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46177.79839045!2d4.166153182240796!3d43.666632142819324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b69cfa940a001f%3A0x4078821166b4840!2sAimargues!5e0!3m2!1sfr!2sfr!4v1585308571599!5m2!1sfr!2sfr" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+            <!-- div qui va contenir la map -->
+            <div id="map" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-6 list ">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 list ">
                 <div class="filter">
                     <form>
                             <div class="dropdown">
@@ -43,7 +42,7 @@
                         <div class="card mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                <img src="..." class="card-img" alt="...">
+                                <img src="images/logo.png" class="card-img" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -58,7 +57,7 @@
                         <div class="card mb-3">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
-                                    <img src="..." class="card-img" alt="...">
+                                    <img src="images/logo.png" class="card-img" alt="...">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
@@ -73,7 +72,7 @@
                         <div class="card mb-3">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
-                                    <img src="..." class="card-img" alt="...">
+                                    <img src="images/logo.png" class="card-img" alt="...">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
@@ -88,7 +87,7 @@
                         <div class="card mb-3">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
-                                    <img src="..." class="card-img" alt="...">
+                                    <img src="images/logo.png" class="card-img" alt="...">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
@@ -99,7 +98,7 @@
                                         </div>
                                     </div>
                                 </div>
-                        </div>
+                        </div> 
                 </div>
             </div>
         </div>
@@ -108,6 +107,8 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="bundle.js"></script>
+        <!-- chargement de l'API javascript Maps avec une clé personnelle / async permet au navigateur d'afficher le reste de votre site Web pendant le chargement de l'API Maps Lorsque l'API est prête, elle appelle la fonction spécifiée à l'aide du callback-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqwcGB30YfGMgnR8Kn7YXJef6X1RvMzcg&callback=initMap" async defer></script>
+        <script src="bundle.js" ></script>
     </body>
 </html>
