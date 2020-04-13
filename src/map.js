@@ -1,18 +1,19 @@
 class Map {
-    constructor (latitude, longitude,position, zoom){
+    constructor (map, latitude, longitude,position, zoom){
+        this.map = map,
         this.latitude = latitude,
         this.longitude = longitude,
-        this.position = position;
+        this.position = position,
         this.zoom = zoom
     }
 }
 let map, infoWindow, position;
-let UserMap = new Map ("","","", 16);
-
+let userMap = new Map ("","","","", 16);
+import {restaurant1, restaurant2, restaurant3, restaurant4} from "./data"
 function initMap(){
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: UserMap.latitude, lng: UserMap.longitude},
-        zoom: UserMap.zoom,
+        center: {lat: userMap.latitude, lng: userMap.longitude},
+        zoom: userMap.zoom,
     // personnalisation de la map
     styles :
     [
@@ -163,16 +164,24 @@ function initMap(){
         ]
     });   
     // marqueur à la position de l'utilisateur
-    let marker = new google.maps.Marker({position: UserMap.position, map: map});
+    let marker = new google.maps.Marker({position: userMap.position, map: map});
+    restaurant1.addRestaurantMarker();
+    restaurant2.addRestaurantMarker();
+    restaurant3.addRestaurantMarker();
+    restaurant4.addRestaurantMarker(); 
     // geolocalisation de l'utilisateur
     infoWindow = new google.maps.InfoWindow;
         // geolocation du user
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            UserMap.latitude = position.coords.latitude;
-            UserMap.longitude = position.coords.longitude;
-            UserMap.position = {lat: UserMap.latitude, lng: UserMap.longitude};
-            let pos = UserMap.position;
+            userMap.latitude = position.coords.latitude;
+            userMap.longitude = position.coords.longitude;
+            userMap.position = {lat: userMap.latitude, lng: userMap.longitude};
+            let pos = userMap.position;
+            console.log(typeof(pos));
+            console.log(typeof(userMap.latitude));
+            console.log(pos);
+            console.log(userMap.position);
             infoWindow.setPosition(pos);
             infoWindow.setContent('Tu es là !');
             infoWindow.open(map);
@@ -198,4 +207,4 @@ function initMap(){
 
 
 export {initMap};
-
+window.map = map; //rattache la fonction au scope global
