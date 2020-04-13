@@ -1,4 +1,4 @@
-import {apiKey} from "./apikey"
+import {apiKey,streetViewApiKey} from "./apikey"
 export class Restaurant {
     constructor (name, address, latitude, longitude,position, ratings, averageRating,marker){
         this.name = name,
@@ -24,9 +24,7 @@ export class Restaurant {
         <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                <img src="https://maps.googleapis.com/maps/api/streetview?size=400x400&location=${this.latitude},${this.longitude}
-                &fov=80&heading=70&pitch=0
-                &key=${apiKey}" class="card-img" alt="image google street view">
+                <img src="https://maps.googleapis.com/maps/api/streetview?size=250x250&location=${this.latitude},${this.longitude}&key=${streetViewApiKey}" class="card-img" alt="image google street view">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -74,11 +72,18 @@ export class Restaurant {
         }                  
     }
     addRestaurantMarker(){
-        this.position = {lat: this.latitude, lng: this.longitude};
+        let myLatLng = new google.maps.LatLng({lat:this.latitude,lng:this.longitude});
+        this.position = new google.maps.LatLng(this.latitude,this.longitude);      
+        console.log(this.latitude);
+        console.log(typeof(this.latitude));
+        console.log(this.longitude);
+        console.log(typeof(this.longitude));
         console.log(typeof(this.position));
         console.log(this.position);
-        const marker = new google.maps.Marker({
-            position : this.position,
+        console.log(myLatLng);
+        console.log(typeof(myLatLng));
+        var marker = new google.maps.Marker({
+            position : myLatLng,
             map: map,
             title : 'hello'
         });
